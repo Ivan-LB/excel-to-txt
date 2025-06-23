@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Generador Excel a TXT Bancario
 
-## Getting Started
+Una aplicación web construida con React y Next.js que convierte tablas de Excel (`.xls`, `.xlsx`) con columnas **Numero de Cuenta**, **Importe** y **Nombre** en un archivo de texto plano con formato bancario de 108 caracteres por línea. La última línea del archivo siempre termina con un salto de línea.
 
-First, run the development server:
+---
+
+## 📦 Características
+
+* **Arrastre y selección** de archivos Excel.
+* **Validación** de columnas obligatorias.
+* **Procesamiento** de filas: secuencia de 9 dígitos, campos fijos, importe en centavos, nombre limpio (sin tildes/ñ) y sufijo `001001`.
+* **Salto de línea final** garantizado en el archivo resultante.
+* **Descarga** inmediata del archivo `.txt` nombrado `LOTE_BANCARIO_YYYY-MM-DD.txt`.
+* **Notificaciones** tipo toast para estados de éxito o error.
+
+---
+
+## 🚀 Tecnologías
+
+* [Next.js](https://nextjs.org) (App Router, Client Components)
+* [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang.org/)
+* [xlsx](https://www.npmjs.com/package/xlsx) para leer y parsear Excel
+* [file-saver](https://www.npmjs.com/package/file-saver) para descargar TXT
+* [Sonner](https://sonner.vercel.app/) para toasts
+* [Lucide-React](https://lucide.dev/) para iconos
+* [Tailwind CSS](https://tailwindcss.com/) (usando shadcn/ui)
+
+---
+
+## 💻 Instalación y Desarrollo
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/tu-usuario/excel-to-txt-generator.git
+   cd excel-to-txt-generator
+   ```
+
+2. Instala dependencias:
+
+   ```bash
+   pnpm install      # o npm install, yarn
+   ```
+
+3. Inicia el servidor de desarrollo:
+
+   ```bash
+   pnpm dev          # o npm run dev, yarn dev
+   ```
+
+4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+
+---
+
+## 🛠️ Uso
+
+1. Arrastra o haz clic en el área para cargar tu archivo Excel.
+2. Presiona **Validar y Procesar Archivo**.
+3. Cuando termine, habilita el botón **Descargar Archivo TXT**.
+4. Descarga tu `.txt` con salto de línea al final.
+
+---
+
+## 📦 Producción
+
+Para generar una versión optimizada:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Luego despliega la carpeta `.next/` en Vercel, Netlify, Amplify, etc.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🤝 Contribuciones
 
-## Learn More
+Las contribuciones son bienvenidas. Abre un *issue* o envía un *pull request* describiendo tu mejora.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📄 Licencia
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Este proyecto está bajo la licencia **MIT**.
