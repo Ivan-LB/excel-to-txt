@@ -1,4 +1,4 @@
-import BankTxtGenerator from "@/app/components/bank-txt-generator"
+import BankTxtGenerator from "@/components/BankTxtGenerator"
 
 export default function HomePage() {
   return (

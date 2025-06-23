@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { Toaster } from "sonner" // Importa Toaster de sonner
+import ClientToaster from "@/components/ClientToaster"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={inter.className}>
         {children}
-        <Toaster richColors position="top-right" /> {/* Añade el Toaster de sonner aquí */}
+        <ClientToaster /> {/* Añade el Toaster de sonner aquí */}
       </body>
     </html>
   )
