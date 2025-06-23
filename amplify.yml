@@ -3,15 +3,15 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm install -g pnpm           # installs pnpm
+        - npm install -g pnpm
         - pnpm install --frozen-lockfile
     build:
       commands:
-        - pnpm build                   # or pnpm run build
+        - pnpm build
   artifacts:
     baseDirectory: out
     files:
-      - '**/*'
+      - "**/*"
   cache:
     paths:
       - node_modules/**/*
